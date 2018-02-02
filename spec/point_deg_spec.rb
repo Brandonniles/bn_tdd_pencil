@@ -11,28 +11,15 @@ describe Pencil do
     expect(tp.dura).to be_a(Integer)
   end
 
-  describe 'tp.write' do
-    before do
-      $stdin = StringIO.new("a\n")
-    end
-    after do
-      $stdin = STDIN
-    end
-    it "writing 'a' should decrease dura by 1" do
-      expect(tp.dura).to eq(4)
-    end
+  it "writing 'a' should decrease dura by 1" do
+    tp.write('a')
+    expect(tp.dura).to eq(4)
   end
 
-  describe 'tp.write' do
-    before do
-      $stdin = StringIO.new("BC\n")
-    end
-    after do
-      $stdin = STDIN
-    end
-    it "writing 'a' should decrease dura by 1" do
-      expect(tp.dura).to eq(1)
-    end
+
+  it "writing 'BC' should decrease dura by 4" do
+    tp.write('BC')
+    expect(tp.dura).to eq(1)
   end
 
 
