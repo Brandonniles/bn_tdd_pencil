@@ -1,15 +1,20 @@
 require_relative '../lib/pencil.rb'
 
 describe Pencil do
+  let(:test_pencil) { Pencil.new(paper: '')}
   it "should have a write method" do
-    expect(Pencil.new.respond_to?(:write)).to eq(true)
+    expect(test_pencil.respond_to?(:write)).to eq(true)
   end
 
   it "should return a string" do
-    expect(Pencil.new.write).to be_kind_of(String)
+    expect(test_pencil.write).to be_kind_of(String)
   end
 
   it "should have a variable for paper" do
-    expect(Pencil.new.respond_to?(:paper)).to eq(true)
+    expect(test_pencil.respond_to?(:paper)).to eq(true)
+  end
+
+  it "paper should be a string" do
+    expect(test_pencil.paper).to be_a(String)
   end
 end
