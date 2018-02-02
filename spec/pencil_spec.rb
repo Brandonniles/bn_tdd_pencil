@@ -23,11 +23,15 @@ describe Pencil do
       $stdin = STDIN
     end
     it "mock the gets input and return a string" do
-      expect(test_pencil.write).to be == 'working'
+      expect(test_pencil.write).to eq('working')
     end
 
     it "write method should return a string" do
       expect(test_pencil.write).to be_a(String)
+    end
+
+    it "should add a string to paper" do
+      expect(test_pencil.write).to eq(test_pencil.paper)
     end
 
   end

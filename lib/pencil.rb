@@ -8,6 +8,7 @@ class Pencil
   def write
     puts "type a string"
     word = $stdin.gets.chomp
+    @paper = word
   end
-  
+
 end
