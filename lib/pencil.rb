@@ -6,7 +6,7 @@ class Pencil
   end
 
   def take_input
-
+    "hey"
   end
 
   def write

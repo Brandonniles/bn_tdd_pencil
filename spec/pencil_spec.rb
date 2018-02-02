@@ -6,7 +6,7 @@ describe Pencil do
     expect(test_pencil.respond_to?(:write)).to eq(true)
   end
 
-  it "should return a string" do
+  it "write method should return a string" do
     expect(test_pencil.write).to be_kind_of(String)
   end
 
@@ -20,6 +20,10 @@ describe Pencil do
 
   it "should have a take_input method" do
     expect(test_pencil.respond_to?(:take_input)).to eq(true)
+  end
+
+  it "take_input should return a string" do
+    expect(test_pencil.take_input).to be_a(String)
   end
 
   # it "write method should add a string to @paper" do
