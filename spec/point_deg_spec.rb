@@ -10,4 +10,20 @@ describe Pencil do
   it "dura should be an integer" do
     expect(tp.dura).to be_a(Integer)
   end
+
+  describe 'tp.write' do
+    before do
+      $stdin = StringIO.new("a\n")
+    end
+    after do
+      $stdin = STDIN
+    end
+
+    it "writing 'a' should decrease dura by 1" do
+      expect(tp.dura).to eq(4)
+    end
+
+  end
+
+
 end

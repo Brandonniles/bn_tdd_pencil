@@ -3,7 +3,7 @@ class Pencil
 
   def initialize(paper:, dura:)
     @paper = paper
-    @dura = dura
+    @dura = 4
   end
 
   def write
