@@ -18,11 +18,21 @@ describe Pencil do
     after do
       $stdin = STDIN
     end
-
     it "writing 'a' should decrease dura by 1" do
       expect(tp.dura).to eq(4)
     end
+  end
 
+  describe 'tp.write' do
+    before do
+      $stdin = StringIO.new("BC\n")
+    end
+    after do
+      $stdin = STDIN
+    end
+    it "writing 'a' should decrease dura by 1" do
+      expect(tp.dura).to eq(1)
+    end
   end
 
 

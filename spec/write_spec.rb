@@ -16,30 +16,18 @@ describe Pencil do
     expect(test_pencil.paper).to be_a(String)
   end
 
-  describe 'test_pencil.write' do
-    before do
-      $stdin = StringIO.new("working\n")
-    end
-    after do
-      $stdin = STDIN
-    end
-    it "mock the gets input and return a string" do
-      expect(test_pencil.write).to eq('working')
-    end
-
-    it "write method should return a string" do
-      expect(test_pencil.write).to be_a(String)
-    end
-
-    it "should add a string to paper" do
-      expect(test_pencil.write).to eq(test_pencil.paper)
-    end
-
-    it "should append a string to the end of paper" do
-      append_pencil.write
-      expect(append_pencil.paper).to eq('hey youworking')
-    end
-
+  it "write method should return a string" do
+    expect(test_pencil.write('hey')).to be_a(String)
   end
+
+  it "should add a string to paper" do
+    expect(test_pencil.write('bubble')).to eq(test_pencil.paper)
+  end
+
+  it "should append a string to the end of paper" do
+    append_pencil.write('working')
+    expect(append_pencil.paper).to eq('hey youworking')
+  end
+
 
 end
