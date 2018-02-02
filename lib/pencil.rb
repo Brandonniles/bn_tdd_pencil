@@ -1,0 +1,3 @@
+class Pencil
+
+end
