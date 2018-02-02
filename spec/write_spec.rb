@@ -1,8 +1,8 @@
 require_relative '../lib/pencil.rb'
 
 describe Pencil do
-  let(:test_pencil) { Pencil.new(paper: '')}
-  let(:append_pencil) { Pencil.new(paper: 'hey you')}
+  let(:test_pencil) { Pencil.new(paper: '', dura: 8)}
+  let(:append_pencil) { Pencil.new(paper: 'hey you', dura: 8)}
 
   it "should have a write method" do
     expect(test_pencil.respond_to?(:write)).to eq(true)
@@ -40,20 +40,6 @@ describe Pencil do
       expect(append_pencil.paper).to eq('hey youworking')
     end
 
-
   end
 
-  # it "append a string to the end of paper" do
-  #   let(:tp) { Pencil.new(paper: ' test')}
-  #   expect(tp.write).to eq('hey youworking')
-  # end
-
-  # it "take_input should return a string" do
-  #   expect(test_pencil.take_input).to be_a(String)
-  # end
-
-
-  # it "write method should add a string to @paper" do
-  #   expect(test_pencil.write).to change {test_pencil.paper}
-  # end
 end
