@@ -6,4 +6,8 @@ describe Pencil do
   it "should have a durability attribute" do
     expect(tp.respond_to?(:dura)).to be(true)
   end
+
+  it "dura should be an integer" do
+    expect(tp.dura).to be_a(Integer)
+  end
 end
