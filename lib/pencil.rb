@@ -1,4 +1,6 @@
 class Pencil
+
+
   def write
     'hey'
   end
