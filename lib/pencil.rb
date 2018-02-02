@@ -5,6 +5,10 @@ class Pencil
     @paper = ''
   end
 
+  def take_input
+
+  end
+
   def write
     'hey'
   end

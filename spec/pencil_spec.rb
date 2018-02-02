@@ -17,4 +17,12 @@ describe Pencil do
   it "paper should be a string" do
     expect(test_pencil.paper).to be_a(String)
   end
+
+  it "should have a take_input method" do
+    expect(test_pencil.respond_to?(:take_input)).to eq(true)
+  end
+
+  # it "write method should add a string to @paper" do
+  #   expect(test_pencil.write).to change {test_pencil.paper}
+  # end
 end
