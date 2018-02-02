@@ -2,12 +2,9 @@ require_relative '../lib/pencil.rb'
 
 describe Pencil do
   let(:test_pencil) { Pencil.new(paper: '')}
+
   it "should have a write method" do
     expect(test_pencil.respond_to?(:write)).to eq(true)
-  end
-
-  it "write method should return a string" do
-    expect(test_pencil.write).to be_kind_of(String)
   end
 
   it "should have a variable for paper" do
@@ -18,20 +15,21 @@ describe Pencil do
     expect(test_pencil.paper).to be_a(String)
   end
 
-  it "should have a take_input method" do
-    expect(test_pencil.respond_to?(:take_input)).to eq(true)
-  end
-
-  describe 'test_pencil.take_input' do
+  describe 'test_pencil.write' do
     before do
       $stdin = StringIO.new("working\n")
     end
     after do
       $stdin = STDIN
     end
-    it "mick the gets input and return a string" do
-      expect(test_pencil.take_input).to be == 'working'
+    it "mock the gets input and return a string" do
+      expect(test_pencil.write).to be == 'working'
     end
+
+    it "write method should return a string" do
+      expect(test_pencil.write).to be_a(String)
+    end
+
   end
 
   # it "take_input should return a string" do

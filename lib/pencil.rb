@@ -5,12 +5,9 @@ class Pencil
     @paper = ''
   end
 
-  def take_input
+  def write
     puts "type a string"
     word = $stdin.gets.chomp
   end
-
-  def write
-    'hey'
-  end
+  
 end
