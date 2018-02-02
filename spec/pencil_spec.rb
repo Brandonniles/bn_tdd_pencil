@@ -22,9 +22,22 @@ describe Pencil do
     expect(test_pencil.respond_to?(:take_input)).to eq(true)
   end
 
-  it "take_input should return a string" do
-    expect(test_pencil.take_input).to be_a(String)
+  describe 'test_pencil.take_input' do
+    before do
+      $stdin = StringIO.new("working\n")
+    end
+    after do
+      $stdin = STDIN
+    end
+    it "mick the gets input and return a string" do
+      expect(test_pencil.take_input).to be == 'working'
+    end
   end
+
+  # it "take_input should return a string" do
+  #   expect(test_pencil.take_input).to be_a(String)
+  # end
+
 
   # it "write method should add a string to @paper" do
   #   expect(test_pencil.write).to change {test_pencil.paper}

@@ -6,7 +6,8 @@ class Pencil
   end
 
   def take_input
-    "hey"
+    puts "type a string"
+    word = $stdin.gets.chomp
   end
 
   def write
