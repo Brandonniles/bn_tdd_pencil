@@ -25,8 +25,7 @@ class Pencil
   end
 
   def sharpen
-    @dura = @max_dura
-    @length -= 1
+    @length > 0 ? (@dura = @max_dura) && (@length -= 1) : "Cannot sharpen, length is 0"
   end
 
 end

@@ -2,6 +2,7 @@ require_relative '../lib/pencil'
 
  describe Pencil do
    let(:sp) { Pencil.new(paper: '', dura: 20, length: 10)}
+   let(:zero) { Pencil.new(paper: '', dura: 15, length: 0)}
 
    it "should have a sharpen method" do
      expect(sp.respond_to?(:sharpen)).to eq(true)
@@ -36,6 +37,15 @@ require_relative '../lib/pencil'
      it "length should be 6 after sp.sharpen" do
        sp.sharpen
        expect(sp.length).to eq(9)
+     end
+   end
+
+   context "write 'Lebron'; call sharpen; 'Lebron' should decrease dura by 7. length == 0; sharpen shouldn't work" do
+     it "writes lebron when length == 0. sharpen should not restore dura" do
+       zero.write('Lebron')
+       expect(zero.dura).to eq(8)
+       zero.sharpen
+       expect(zero.dura).to eq(8)
      end
    end
 
