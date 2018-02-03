@@ -1,8 +1,7 @@
 require_relative '../lib/pencil'
 
  describe Pencil do
-   let(:sp) { Pencil.new(paper: '', dura: 20)}
-   let(:equal_p) { Pencil.new(paper: '', dura: 88) }
+   let(:sp) { Pencil.new(paper: '', dura: 20, length: 10)}
 
    it "should have a sharpen method" do
      expect(sp.respond_to?(:sharpen)).to eq(true)
@@ -16,7 +15,7 @@ require_relative '../lib/pencil'
 
    context 'a new pencil should have equal dura and max_dura values' do
      it "max_dura and dura should be equal" do
-       expect(equal_p.dura).to eq(equal_p.max_dura)
+       expect(sp.dura).to eq(sp.max_dura)
      end
    end
 
@@ -27,6 +26,10 @@ require_relative '../lib/pencil'
        sp.sharpen
        expect(sp.dura).to eq(20)
      end
+   end
+
+   it "should have a length attribute" do
+     expect(sp.respond_to?(:length)).to eq(true)
    end
 
 

@@ -1,8 +1,8 @@
 require_relative '../lib/pencil.rb'
 
 describe Pencil do
-  let(:test_pencil) { Pencil.new(paper: '', dura: 18)}
-  let(:append_pencil) { Pencil.new(paper: 'hey you', dura: 18)}
+  let(:test_pencil) { Pencil.new(paper: '', dura: 18, length: 7)}
+  let(:append_pencil) { Pencil.new(paper: 'hey you', dura: 18, length: 7)}
 
   it "should have a write method" do
     expect(test_pencil.respond_to?(:write)).to eq(true)
