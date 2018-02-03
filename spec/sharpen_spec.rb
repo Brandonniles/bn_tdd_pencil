@@ -20,5 +20,14 @@ require_relative '../lib/pencil'
      end
    end
 
+   context "write 'testing' then call sharpen to restore dura from 13 back to 20" do
+     it "should write 'testing' then restore dura to 20" do
+       sp.write('testing')
+       expect(sp.dura).to eq(13)
+       sp.sharpen
+       expect(sp.dura).to eq(20)
+     end
+   end
+
 
  end
