@@ -2,6 +2,8 @@ require_relative '../lib/pencil'
 
 describe Pencil do
   let(:tp) { Pencil.new(paper: '', dura: 5)}
+  let(:tp2) { Pencil.new(paper: '', dura: 8)}
+  let(:tp3) { Pencil.new(paper: '', dura: 20)}
 
   it "should have a durability attribute" do
     expect(tp.respond_to?(:dura)).to be(true)
@@ -24,7 +26,19 @@ describe Pencil do
 
   context 'prints part of the string if the durability is low' do
     it "returns 'eleph' for 'elephant' when dura == 5" do
-      expect(tp.write('elephant')).to eq('eleph')
+      expect(tp.write('elephant')).to eq('eleph   ')
+    end
+  end
+
+  context 'prints the whole string in dura is greater than string.length' do
+    it "returns 'pillar' when dura == 8" do
+      expect(tp2.write('pillar')).to eq('pillar')
+    end
+  end
+
+  context 'spaces do not affect dura rating' do
+    it "writes 'a you     I or' and dura decreases by 8" do
+      expect { tp3.write('a you     I or') }.to change(tp3, :dura).by(-8)
     end
   end
 
