@@ -32,5 +32,12 @@ require_relative '../lib/pencil'
      expect(sp.respond_to?(:length)).to eq(true)
    end
 
+   context 'length should decrease by 1 when sharpened' do
+     it "length should be 6 after sp.sharpen" do
+       sp.sharpen
+       expect(sp.length).to eq(9)
+     end
+   end
+
 
  end

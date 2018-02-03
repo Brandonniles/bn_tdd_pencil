@@ -29,5 +29,4 @@ describe Pencil do
     expect(append_pencil.paper).to eq('hey youworking')
   end
 
-
 end
