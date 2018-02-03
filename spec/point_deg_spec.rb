@@ -22,5 +22,11 @@ describe Pencil do
     expect(tp.dura).to eq(1)
   end
 
+  context 'prints part of the string if the durability is low' do
+    it "returns 'eleph' for 'elephant' when dura == 5" do
+      expect(tp.write('elephant')).to eq('eleph')
+    end
+  end
+
 
 end

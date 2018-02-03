@@ -14,6 +14,7 @@ class Pencil
   def write(take_input)
     take_input.chars.each { |chars| chars =~ /[A-Z]/ ? @dura -= 2 : @dura -= 1 }
     @paper += take_input
+    @dura < take_input.length ? take_input[0..(@dura-1)] : take_input
   end
 
 end
