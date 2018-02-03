@@ -24,7 +24,7 @@ class Pencil
   end
 
   def sharpen
-
+    @dura = @max_dura
   end
 
 end
