@@ -28,7 +28,7 @@ class Pencil
     @length > 0 ? (@dura = @max_dura) && (@length -= 1) : "Cannot sharpen, length is 0"
   end
 
-  def erase
+  def erase(take_input)
 
   end
 

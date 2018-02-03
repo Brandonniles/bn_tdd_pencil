@@ -6,4 +6,9 @@ describe Pencil do
   it "should have an erase method" do
     expect(ep.respond_to?(:erase)).to be(true)
   end
+
+  it "should take in 1 string parameter" do
+    expect(ep.erase('James')).to be(nil)
+  end
+  
 end
