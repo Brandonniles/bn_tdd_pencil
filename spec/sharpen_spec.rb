@@ -1,8 +1,8 @@
 require_relative '../lib/pencil'
 
  describe Pencil do
-   let(:sp) { Pencil.new(paper: '', dura: 20, length: 10)}
-   let(:zero) { Pencil.new(paper: '', dura: 15, length: 0)}
+   let(:sp) { Pencil.new(paper: '', dura: 20, length: 10, eraser_dura: 30)}
+   let(:zero) { Pencil.new(paper: '', dura: 15, length: 0, eraser_dura: 30)}
 
    it "should have a sharpen method" do
      expect(sp.respond_to?(:sharpen)).to eq(true)

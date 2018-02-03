@@ -1,11 +1,12 @@
 class Pencil
-  attr_accessor :paper, :dura, :max_dura, :length
+  attr_accessor :paper, :dura, :max_dura, :length, :eraser_dura
 
-  def initialize(paper:, dura:, length:)
+  def initialize(paper:, dura:, length:, eraser_dura:)
     @paper = paper
     @dura = dura
     @max_dura = dura
     @length = length
+    @eraser_dura = eraser_dura
   end
 
   def take_input
