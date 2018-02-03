@@ -22,4 +22,8 @@ class Pencil
     "You wrote: #{string.join}"
   end
 
+  def sharpen
+
+  end
+
 end
