@@ -1,14 +1,17 @@
 require_relative '../lib/pencil'
 
 describe Pencil do
-  let(:ep) { Pencil.new(paper: '', dura: 20, length: 10)}
+  let(:ep) { Pencil.new(paper: 'cavs love kyrie too', dura: 20, length: 10)}
 
   it "should have an erase method" do
     expect(ep.respond_to?(:erase)).to be(true)
   end
 
-  it "should take in 1 string parameter" do
-    expect(ep.erase('James')).to be(nil)
+  context "should delete the last occurence of string and replaced with spaces" do
+    it "replaces 'kyrie' from @paper with '     '" do
+      ep.erase('kyrie')
+      expect(ep.paper).to eq('cavs love       too')
+    end
   end
-  
+
 end

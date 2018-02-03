@@ -29,7 +29,11 @@ class Pencil
   end
 
   def erase(take_input)
-
+    rev_str = take_input.reverse
+    rev_paper = @paper.reverse
+    rev_str.length.times { rev_paper.insert(rev_paper.index(rev_str), ' ') }
+    rev_paper.slice!(rev_str)
+    @paper = rev_paper.reverse
   end
 
 end
