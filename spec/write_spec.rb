@@ -21,7 +21,7 @@ describe Pencil do
   end
 
   it "should add a string to paper" do
-    expect(test_pencil.write('bubble')).to eq(test_pencil.paper)
+    expect(test_pencil.write('bubble')).to eq("You wrote: #{test_pencil.paper}")
   end
 
   it "should append a string to the end of paper" do

@@ -26,13 +26,13 @@ describe Pencil do
 
   context 'prints part of the string if the durability is low' do
     it "returns 'eleph' for 'elephant' when dura == 5" do
-      expect(tp.write('elephant')).to eq('eleph   ')
+      expect(tp.write('elephant')).to eq('You wrote: eleph   ')
     end
   end
 
   context 'prints the whole string in dura is greater than string.length' do
     it "returns 'pillar' when dura == 8" do
-      expect(tp2.write('pillar')).to eq('pillar')
+      expect(tp2.write('pillar')).to eq('You wrote: pillar')
     end
   end
 
