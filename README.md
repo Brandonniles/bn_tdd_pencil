@@ -4,12 +4,12 @@ Developed by Brandon Niles
 
 Built with Ruby 2.3.3 & RSpec 3.7.0
 
-##Notes
-- The accuracy of the brains/logic of the pencil can be verified through two primary ways:
+## Notes
+1. The accuracy of the brains/logic of the pencil can be verified through two primary ways:
   1. Observation of all the test running and passing.
   2. A terminal interface was coded to allow the user to test out and use features
-- Frequent commits were made so that verification of TDD practices could be seen.
-- A few comments were left in the code to help others understand the logic.
+2. Frequent commits were made so that verification of TDD practices could be seen.
+3. A few comments were left in the code to help others understand the logic.
 
 
 ## Dependencies
