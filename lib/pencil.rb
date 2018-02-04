@@ -56,8 +56,13 @@ class Pencil
   def edit(take_input)
     insert_index = @paper.index('    ')
     take_input.length.times do |i|
-      @paper.insert(insert_index + (i+1), take_input[i])
-      @paper.slice!(insert_index + (i+2), 1)
+      if @paper[insert_index+(i+1)] == ' '
+        @paper.insert(insert_index + (i+1), take_input[i])
+        @paper.slice!(insert_index + (i+2), 1)
+      else
+        @paper.insert(insert_index + (i+1), '@')
+        @paper.slice!(insert_index + (i+2), 1)
+      end
     end
   end
 
