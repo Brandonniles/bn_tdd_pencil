@@ -23,6 +23,9 @@ describe Pencil do
         expect(editp.paper).to eq('I like       mac and cheese')
         editp.edit('terrific')
         expect(editp.paper).to eq('I like terrif@@c and cheese')
+        #added line to verify edit method affects @dura instead writing new tests
+        expect(editp.dura).to eq(6)
+
     end
 
     it "erases 'onion'; edits with 'artichoke' " do
@@ -30,6 +33,8 @@ describe Pencil do
       expect(their_example.paper).to eq('An       a day keeps the doctor away')
       their_example.edit('artichoke')
       expect(their_example.paper).to eq('An artich@k@ay keeps the doctor away')
+      #added line to verify edit method affects @dura instead writing new tests
+      expect(their_example.dura).to eq(9)
     end
   end
 

@@ -63,6 +63,7 @@ class Pencil
         @paper.insert(insert_index + (i+1), '@')
         @paper.slice!(insert_index + (i+2), 1)
       end
+      @dura -= 1
     end
   end
 
