@@ -18,5 +18,8 @@ describe Display do
     expect(Display.respond_to?(:get_eraser)).to be(true)
   end
 
+  it "choice selection method should exist" do
+    expect(Display.respond_to?(:choice_selection)).to be(true)
+  end
 
 end
