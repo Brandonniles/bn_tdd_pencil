@@ -53,8 +53,12 @@ class Pencil
     'Eraser is empty' if @eraser_dura <= 0
   end
 
-  def edit
-
+  def edit(take_input)
+    insert_index = @paper.index('    ')
+    take_input.length.times do |i|
+      @paper.insert(insert_index + (i+1), take_input[i])
+      @paper.slice!(insert_index + (i+2), 1)
+    end
   end
 
 end
