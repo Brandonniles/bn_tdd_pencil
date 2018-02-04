@@ -26,9 +26,4 @@ describe Display do
     expect(Display.respond_to?(:np_err)).to be(true)
   end
 
-  def np_err
-  puts "\nNo pencil yet created"
-  sleep(1.5)
-  end
-
 end
