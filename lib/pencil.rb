@@ -33,7 +33,6 @@ class Pencil
     rev_str.length.times { rev_paper.insert(rev_paper.index(rev_str), ' ') }
     rev_paper.slice!(rev_str)
     @paper = rev_paper.reverse
-
   end
 
   def partial_deletion(rev_str, rev_paper)
@@ -43,7 +42,6 @@ class Pencil
     rev_paper.slice!(rev_paper.index(rev_str), @eraser_dura)
     # update eraser_dura
     @paper = rev_paper.reverse
-
   end
 
   def erase(take_input)
@@ -52,7 +50,11 @@ class Pencil
     complete_deletion(rev_str, rev_paper) if @eraser_dura >= rev_str.length
     partial_deletion(rev_str, rev_paper) if (0...rev_str.length).include?(@eraser_dura)
     take_input.each_char { |chr| @eraser_dura -= 1 if chr =~ /\S/ }
-    puts 'Eraser is empty' if @eraser_dura <= 0
+    'Eraser is empty' if @eraser_dura <= 0
+  end
+
+  def edit
+
   end
 
 end
