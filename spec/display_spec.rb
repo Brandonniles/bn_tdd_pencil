@@ -22,4 +22,13 @@ describe Display do
     expect(Display.respond_to?(:choice_selection)).to be(true)
   end
 
+  it "contains an error method for when no pencil is created yet but the user calls a method" do
+    expect(Display.respond_to?(:np_err)).to be(true)
+  end
+
+  def np_err
+  puts "\nNo pencil yet created"
+  sleep(1.5)
+  end
+
 end
