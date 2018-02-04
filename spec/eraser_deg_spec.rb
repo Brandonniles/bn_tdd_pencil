@@ -1,8 +1,8 @@
 require_relative '../lib/pencil'
 
 describe Pencil do
-  let(:edp) { Pencil.new(paper: 'wilson where are you? w   i   l s  o   n', dura: 15, length: 8, eraser_dura: 30)}
-  let(:ed0) {Pencil.new(paper: 'hey there is a cup of mac and cheese', dura: 9, length: 12, eraser_dura: 0)}
+  let(:edp) { Pencil.new(paper: 'hey wilson where are you? hey w   i   l s  o   n', dura: 15, length: 8, eraser_dura: 30)}
+  let(:ed0) {Pencil.new(paper: 'hey mac there is a cup of mac and cheese', dura: 9, length: 12, eraser_dura: 0)}
 
   it "should have an eraser durabiliity attribute" do
     expect(edp.respond_to?(:eraser_dura)).to be(true)
@@ -18,7 +18,14 @@ describe Pencil do
   context 'when eraser_dura == 0, erase does not work' do
     it "erase does not remove 'cup' from @paper" do
       ed0.erase('cup')
-      expect(ed0.paper).to eq('hey there is a cup of mac and cheese')
+      expect(ed0.paper).to eq('hey mac there is a cup of mac and cheese')
+    end
+  end
+
+  context "test is erased in opposite order written" do
+    it "removes the last instance of 'hey' from paper" do
+      edp.erase('hey')
+      expect(edp.paper).to eq('hey wilson where are you?     w   i   l s  o   n')
     end
   end
 
