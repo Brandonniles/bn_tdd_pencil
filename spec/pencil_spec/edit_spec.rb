@@ -1,4 +1,4 @@
-require_relative '../lib/pencil'
+require_relative '../../lib/pencil'
 
 describe Pencil do
   let(:editp) { Pencil.new(paper: 'I like baked mac and cheese', dura: 14, length: 12, eraser_dura: 14)}

@@ -1,4 +1,4 @@
-require_relative '../lib/pencil.rb'
+require_relative '../../lib/pencil.rb'
 
 describe Pencil do
   let(:test_pencil) { Pencil.new(paper: '', dura: 18, length: 7, eraser_dura: 30)}
