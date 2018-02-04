@@ -9,10 +9,10 @@ class Pencil
     @eraser_dura = eraser_dura
   end
 
-  def take_input
-    puts "type a string"
-    output = gets.chomp
-  end
+  # def take_input
+  #   puts "type a string"
+  #   output = gets.chomp
+  # end
 
   def write(take_input)
     string = []
@@ -65,6 +65,13 @@ class Pencil
       end
       @dura -= 1
     end
+  end
+
+  def stats
+    puts "\nPaper says: #{@paper}"
+    puts "Durability: #{@dura}"
+    puts "Length: #{@length}"
+    puts "Eraser Durability: #{@eraser_dura}"
   end
 
 end

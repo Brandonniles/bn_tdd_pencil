@@ -1,8 +1,17 @@
+require_relative '../lib/pencil'
+
 module Display
-  pencils = []
+  attr_accessor :pencils
+
+  @pencils = []
+
+  def self.take_input
+    puts "type a string"
+    output = gets.chomp
+  end
 
   def self.get_choice
-    puts "Type number that matches your sel and hit enter"
+    puts "Type number that matches your selection and hit enter"
     num = gets.chomp
   end
 
@@ -26,19 +35,19 @@ module Display
   sleep(1.5)
   end
 
-  def self.create_pencil
-    cp = Pencil.new(paper: '', dura: d, length: l, eraser_dura: e)
+  def self.create_pencil(pencils)
+    cp = Pencil.new(paper: '', dura: get_dura, length: get_length, eraser_dura: get_eraser)
     pencils << cp
   end
 
   def self.choice_selection(get_choice)
-    case input
-    when '1' then create_pencil(pencils)
-    when '2' then pencils.length == 0 ? np_err : pencils.last.write
-    when '3' then pencils.length == 0 ? np_err : pencils.last.sharpen
-    when '4' then pencils.length == 0 ? np_err : pencils.last.erase
-    when '5' then pencils.length == 0 ? np_err : pencils.last.edit
-    when '6' then pencils.length == 0 ? np_err : pencils.last.stats
+    case get_choice
+    when '1' then create_pencil(@pencils)
+    when '2' then @pencils.length == 0 ? np_err : @pencils.last.write(take_input)
+    when '3' then @pencils.length == 0 ? np_err : @pencils.last.sharpen
+    when '4' then @pencils.length == 0 ? np_err : @pencils.last.erase(take_input)
+    when '5' then @pencils.length == 0 ? np_err : @pencils.last.edit(take_input)
+    when '6' then @pencils.length == 0 ? np_err : @pencils.last.stats
     when '0' then abort
     else
       puts "unrecognizable command"
