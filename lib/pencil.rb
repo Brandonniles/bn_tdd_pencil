@@ -32,9 +32,12 @@ class Pencil
   def erase(take_input)
     rev_str = take_input.reverse
     rev_paper = @paper.reverse
-    rev_str.length.times { rev_paper.insert(rev_paper.index(rev_str), ' ') }
-    rev_paper.slice!(rev_str)
-    @paper = rev_paper.reverse
+    if @eraser_dura > 0
+      rev_str.length.times { rev_paper.insert(rev_paper.index(rev_str), ' ') }
+      rev_paper.slice!(rev_str)
+      @paper = rev_paper.reverse
+      take_input.each_char { |chr| @eraser_dura -= 1 if chr =~ /\S/ }
+    end
   end
 
 end
