@@ -3,6 +3,7 @@ require_relative '../lib/pencil'
 describe Pencil do
   let(:edp) { Pencil.new(paper: 'hey wilson where are you? hey w   i   l s  o   n', dura: 15, length: 8, eraser_dura: 30)}
   let(:ed0) {Pencil.new(paper: 'hey mac there is a cup of mac and cheese', dura: 9, length: 12, eraser_dura: 0)}
+  let(:ed12) { Pencil.new(paper: 'hey bill how are ya?', dura: 9, length: 12, eraser_dura: 3)}
 
   it "should have an eraser durabiliity attribute" do
     expect(edp.respond_to?(:eraser_dura)).to be(true)
@@ -26,6 +27,13 @@ describe Pencil do
     it "removes the last instance of 'hey' from paper" do
       edp.erase('hey')
       expect(edp.paper).to eq('hey wilson where are you?     w   i   l s  o   n')
+    end
+  end
+
+  context 'only part of string deleted is @eraser_dura is too low' do
+    it "deletes 'ill' from 'bill' if @eraser_dura is 3" do
+      ed12.erase('bill')
+      expect(ed12.paper).to eq('hey b    how are ya?')
     end
   end
 
