@@ -7,27 +7,27 @@ module Display
 
   def self.take_input
     puts "type a string"
-    output = gets.chomp
+    gets.chomp
   end
 
   def self.get_choice
     puts "Type number that matches your selection and hit enter"
-    num = gets.chomp
+    gets.chomp
   end
 
   def self.get_dura
     puts "What lead durability will your pencil have? (must be in integer greater than 0)"
-    d = gets.chomp.to_i
+    gets.chomp.to_i
   end
 
   def self.get_length
     puts "What length will your pencil have? (must be in integer greater than 0)"
-    l = gets.chomp.to_i
+    gets.chomp.to_i
   end
 
   def self.get_eraser
     puts "What eraser durability will your pencil have? (must be in integer greater than 0)"
-    e = gets.chomp.to_i
+    gets.chomp.to_i
   end
 
   def self.np_err
